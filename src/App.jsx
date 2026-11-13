@@ -3,25 +3,22 @@ import Header from "./components/Header.jsx";
 import MenuCard from "./components/MenuCard.jsx";
 import Footer from "./components/Footer.jsx";
 
-// 담은 개수는 공통 부모인 App이 기억합니다.
+// 담은 개수는 App이 state로 기억하고 Header와 MenuCard에 props로 내려보냅니다
 function App() {
-  // TODO 1: useState — 화면에 표시할 개수를 기억합니다.
-  const [count, setCount] = useState(0);
+  const [count, setCount] = TODO 1(0);
 
-  // TODO 2, 3: useEffect와 count — 개수가 바뀌면 탭 제목을 바꿉니다.
-  useEffect(() => {
+  // 담은 개수가 바뀔 때마다 브라우저 탭의 제목을 바꿉니다(사이드 이펙트)
+  TODO 2(() => {
     document.title = count > 0 ? `(${count}) 오즈 카페` : "오즈 카페";
-  }, [count]);
+  }, [TODO 3]);
 
   function handleAdd() {
-    // TODO 4: setCount — 담은 개수를 1 늘립니다.
-    setCount(count + 1);
+    TODO 4(count + 1);
   }
 
   return (
     <>
-      {/* TODO 5: count — Header에 현재 개수를 전달합니다. */}
-      <Header count={count} />
+      <Header TODO 5={count} />
       <main>
         <h2>메뉴</h2>
         <div className="menu-list">
