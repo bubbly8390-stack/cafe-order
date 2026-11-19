@@ -29,3 +29,4 @@ dist-ssr
 
 # 아침 받기(강사 시작판으로 맞추기) 때 지워졌다 생기기를 되풀이하지 않게
 package-lock.json
+node_modules_backup/
