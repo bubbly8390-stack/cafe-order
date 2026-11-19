@@ -35,16 +35,12 @@ function App() {
     setCart(cart.filter((_, i) => i !== index));
   }
 
-  function handleClear() {
-    setCart([]);
-  }
-
   return (
     <Routes>
       <Route element={<Layout count={cart.length} user={user} />}>
         <Route index element={<MenuPage onAdd={handleAdd} />} />
         <Route path="menu/:id" element={<MenuDetailPage onAdd={handleAdd} />} />
-        <Route path="cart" element={<CartPage cart={cart} user={user} onRemove={handleRemove} onClear={handleClear} />} />
+        <Route path="cart" element={<CartPage cart={cart} onRemove={handleRemove} />} />
         <Route path="login" element={<LoginPage user={user} />} />
         {/* 로그인해야 들어가는 페이지 */}
         <Route element={<PrivateRoute user={user} />}>

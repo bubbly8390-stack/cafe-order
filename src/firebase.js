@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
 
 // Firebase 콘솔에서 받은 firebaseConfig — 값은 .env.local에 두고 import.meta.env로 읽습니다
 const firebaseConfig = {
@@ -14,4 +13,3 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app); // 다른 파일에서는 이 auth를 가져다 씁니다
-export const db = TODO 1(app); // Firestore 데이터베이스 — 주문을 여기에 저장합니다
