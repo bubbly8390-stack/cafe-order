@@ -26,7 +26,7 @@ function OrdersPage({ user }) {
   async function cancelOrder(order) {
     const { error } = await supabase
       .from("orders")
-      .TODO 5()
+      .delete()
       .eq("id", order.id);
     if (error) {
       setMessage(error.message);

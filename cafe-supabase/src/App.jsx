@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     // 처음 한 번(INITIAL_SESSION), 그 뒤 로그인 · 로그아웃할 때마다 불림
-    const { data } = supabase.auth.TODO 2((event, session) => {
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session ? session.user : null);
       setChecking(false);
     });
