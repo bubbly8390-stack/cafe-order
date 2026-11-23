@@ -19,4 +19,5 @@ npm run dev
 - [x] DAY32 꾸미기 — Tailwind CSS, 좁은 화면 1칸 → 넓은 화면 2 · 3칸
 - [x] DAY33 로그인 — Firebase Authentication, 로그인해야 들어가는 내 주문
 - [x] DAY34 주문 저장과 배포 — Firestore에 주문 저장 · 내 주문 · 주문 취소, 보안 규칙, Firebase Hosting
-- [ ] DAY35 다듬기 — 로그인 확인 중(checking), 머리말의 이메일, 상태 지도
+- [x] DAY35 다듬기 — 로그인 확인 중(checking), 머리말의 이메일, 상태 지도
+- [ ] DAY36 Supabase로 옮겨 보기 — cafe-supabase(로그인 · orders 표 · 행 보안)
