@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router";
 import { supabase } from "../supabase.js";
 import Button from "../components/Button.jsx";
@@ -9,8 +9,8 @@ function CartPage({ cart, user, onRemove, onClear }) {
   const total = cart.reduce((sum, menu) => sum + menu.price, 0);
 
   async function handleOrder() {
-    const { error } = await supabase.from("orders").TODO 3({
-      TODO 4: user.id,
+    const { error } = await supabase.from("orders").children({
+      useContext: user.id,
       items: cart.map((menu) => menu.name),
       total,
     });
