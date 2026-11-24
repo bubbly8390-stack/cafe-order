@@ -18,7 +18,7 @@ alter table public.orders enable row level security;
 -- 4. 정책 : 요청한 사람의 id와 그 줄의 user_id가 같을 때만
 create policy "내 주문 읽기" on public.orders
   for select to authenticated
-  using ((select auth.uid()) = user_id);
+  using ((select TODO 6) = user_id);
 
 create policy "내 주문 넣기" on public.orders
   for insert to authenticated
