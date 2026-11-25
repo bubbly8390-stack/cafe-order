@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase.js";
+import { selectCartCount, useCartStore } from "../stores/cartStore.js";
 import Button from "./Button.jsx";
 
 // 메뉴 링크 — [&.active]:는 NavLink가 지금 주소의 링크에 붙이는 active 클래스가 있을 때만
@@ -9,7 +10,8 @@ const navClass =
   "[&.active]:bg-amber-100 [&.active]:text-amber-900";
 
 // 머리말 — 로그인했으면 로그아웃 단추, 아니면 로그인 링크
-function Header({ count, user }) {
+function Header({ user }) {
+  const count = TODO 5(selectCartCount); // store에서 바로 꺼냄
   return (
     <header className="border-b border-stone-200 bg-white">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-4">

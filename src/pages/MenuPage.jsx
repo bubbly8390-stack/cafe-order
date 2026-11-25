@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MenuCard from "../components/MenuCard.jsx";
 import { menus, categories } from "../data/menus.js";
+import { useCartStore } from "../stores/cartStore.js";
 
 // 분류 단추 — 고른 것과 아닌 것의 클래스를 통째로 적어 둡니다
 const chipOn = "rounded-full bg-amber-700 px-4 py-1.5 text-sm font-bold text-white";
@@ -12,7 +13,8 @@ const inputClass =
   "focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-200";
 
 // 메뉴(/) — 분류와 찾는 글자로 거른 메뉴 목록
-function MenuPage({ onAdd }) {
+function MenuPage() {
+  const addToCart = useCartStore((state) => state.addToCart);
   const [category, setCategory] = useState("전체");
   const [keyword, setKeyword] = useState("");
 
@@ -54,7 +56,7 @@ function MenuPage({ onAdd }) {
               name={menu.name}
               price={menu.price}
               desc={menu.desc}
-              onAdd={() => onAdd(menu)}
+              onAdd={() => addToCart(menu)}
             />
           ))}
         </div>
