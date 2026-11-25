@@ -10,7 +10,7 @@ function CartPage({ user }) {
   const cart = useCartStore((state) => state.cart);
   const total = useCartStore(selectCartTotal);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const clearCart = useCartStore((state) => state.TODO 6);
+  const clearCart = useCartStore((state) => state.clearCart);
   const [message, setMessage] = useState("");
 
   function handleOrder() {
