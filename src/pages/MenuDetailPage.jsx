@@ -1,12 +1,16 @@
 import { Link, useParams } from "react-router";
-import { menus } from "../data/menus.js";
+import useFetch from "../hooks/useFetch.js";
 import { useCartStore } from "../stores/cartStore.js";
 import Button from "../components/Button.jsx";
 
 // 메뉴 하나(/menu/:id) — 주소의 :id로 어떤 메뉴인지 찾습니다
 function MenuDetailPage() {
-  const addToCart = useCartStore((state) => state.addToCart);
   const { id } = useParams(); // 주소에서 꺼낸 값은 문자열 — "2"
+  const { data: menus, error, loading } = useFetch("/menus.json");
+  const addToCart = useCartStore((state) => state.addToCart);
+
+  if (loading) return <p className="text-stone-500">메뉴를 불러오는 중…</p>;
+  if (error) return <p className="text-sm text-red-600">불러오지 못했습니다 — {error.message}</p>;
   const menu = menus.find((item) => item.id === Number(id));
 
   if (!menu) {

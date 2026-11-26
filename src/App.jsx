@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase.js";
@@ -9,8 +9,10 @@ import MenuPage from "./pages/MenuPage.jsx";
 import MenuDetailPage from "./pages/MenuDetailPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
-import OrdersPage from "./pages/OrdersPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+
+// 내 주문 — 처음 들어갈 때 따로 받아 오는 파일
+const OrdersPage = TODO 6(() => import("./pages/OrdersPage.jsx"));
 
 // 장바구니는 store(cartStore)가 맡고, App은 로그인 상태를 기억합니다
 function App() {
@@ -38,7 +40,14 @@ function App() {
         <Route path="cart" element={<CartPage user={user} />} />
         <Route path="login" element={<LoginPage user={user} checking={checking} />} />
         <Route element={<PrivateRoute user={user} checking={checking} />}>
-          <Route path="orders" element={<OrdersPage user={user} />} />
+          <Route
+            path="orders"
+            element={
+              <Suspense fallback={<p className="text-stone-500">주문 내역을 여는 중…</p>}>
+                <OrdersPage user={user} />
+              </Suspense>
+            }
+          />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>

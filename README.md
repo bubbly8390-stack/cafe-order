@@ -22,4 +22,5 @@ npm run dev
 - [x] DAY35 다듬기 — 로그인 확인 중(checking), 머리말의 이메일, 상태 지도
 - [x] DAY36 Supabase로 옮겨 보기 — cafe-supabase(로그인 · orders 표 · 행 보안)
 - [x] DAY37 장바구니를 Context로 — CartProvider
-- [ ] DAY38 장바구니를 Zustand로 — cartStore : create · set
+- [x] DAY38 장바구니를 Zustand로 — cartStore : create · set
+- [ ] DAY39 메뉴 불러오기와 가볍게 — useFetch · memo · useCallback · lazy
