@@ -11,8 +11,8 @@ export default function useFetch(url) {
 
     async function load() {
       try {
-        const response = await TODO 1(url);
-        if (!response.TODO 2) {
+        const response = await fetch(url);
+        if (!response.ok) {
           throw new Error(`${response.status} 오류`);
         }
         const json = await response.json();

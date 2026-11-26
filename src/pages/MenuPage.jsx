@@ -15,13 +15,13 @@ const inputClass =
 
 // 메뉴(/) — 메뉴 데이터는 public/menus.json에서 받아 옵니다
 function MenuPage() {
-  const { data: menus, error, loading } = TODO 3("/menus.json");
+  const { data: menus, error, loading } = useFetch("/menus.json");
   const [category, setCategory] = useState("전체");
   const [keyword, setKeyword] = useState("");
   const addToCart = useCartStore((state) => state.addToCart);
 
   // MenuCard에 내려보내는 함수 — 다시 그려도 같은 함수를 씀(memo가 통하게)
-  const handleAdd = TODO 4((menu) => addToCart(menu), [addToCart]);
+  const handleAdd = useCallback((menu) => addToCart(menu), [addToCart]);
 
   const visibleMenus = (menus || []).filter(
     (menu) =>

@@ -20,4 +20,4 @@ function MenuCard({ menu, onAdd }) {
 }
 
 // props가 그대로면 다시 그리지 않음
-export default TODO 5(MenuCard);
+export default memo(MenuCard);
