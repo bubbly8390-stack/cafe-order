@@ -1,4 +1,4 @@
-import Link from "next/TODO 4";
+import Link from "next/link";
 
 // 주문 앱(cafe-order)의 개발 서버 주소 — 두 앱을 함께 켜 두면 링크로 오갑니다
 const ORDER_APP_URL = "http://localhost:5173";
@@ -18,7 +18,7 @@ export default function Home() {
         <li>소금빵 3500원</li>
       </ul>
       <p>
-        <Link TODO 5="/menu">메뉴 모두 보기</Link>
+        <Link href="/menu">메뉴 모두 보기</Link>
       </p>
       <p>
         <a href={ORDER_APP_URL}>앱으로 주문하기</a>

@@ -17,7 +17,7 @@ const menus = [
 ];
 
 // 메뉴(/menu) — app/menu/page.js 파일이 곧 /menu 주소입니다
-export TODO 6 function MenuPage() {
+export default function MenuPage() {
   return (
     <main>
       <h1>메뉴</h1>
