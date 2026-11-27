@@ -23,4 +23,5 @@ npm run dev
 - [x] DAY36 Supabase로 옮겨 보기 — cafe-supabase(로그인 · orders 표 · 행 보안)
 - [x] DAY37 장바구니를 Context로 — CartProvider
 - [x] DAY38 장바구니를 Zustand로 — cartStore : create · set
-- [ ] DAY39 메뉴 불러오기와 가볍게 — useFetch · memo · useCallback · lazy
+- [x] DAY39 메뉴 불러오기와 가볍게 — useFetch · memo · useCallback · lazy
+- [ ] DAY40 가게 소개 페이지 — cafe-intro(Next.js), metadata · title.template, 메뉴 페이지
